@@ -1,0 +1,40 @@
+<%- include("./partials/header") %>
+
+  <!-- <a href="/albums">Go to the history of recommendations </a>
+  <a href="/about">About</a>
+  <img class="landingImage" src="/images/IMG_2557.JPG" alt=""> -->
+<div class="container text-center landingAlbumImage">
+  <!-- <i class="fas fa-angle-left controls"></i> -->
+  <img src="<%=todaysAlbum.image%>" alt="<%=todaysAlbum.name%> - <%=todaysAlbum.artist%>">
+  <!-- <i class="fas fa-angle-right controls"></i> -->
+</div>
+
+<div class="container text-center albumInformation">
+    <p><%=todaysAlbum.date%></p>
+    <h5><%=todaysAlbum.name%></h5>
+    <h5><%=todaysAlbum.artist%></h5>
+    <h5><%=todaysAlbum.year%></h5>
+</div>
+
+<div class="container">
+  <div class="row linkIcons text-center">
+    <div class="col"></div>
+    <div class="col"><a href="<%=todaysAlbum.spotifyLink%>" target="_blank"> <i class="fab fa-spotify"></i></a></div>
+    <div class="col"><a href="<%=todaysAlbum.youtubeLink%>" target="_blank"> <i class="fab fa-youtube"></i></a></div>
+    <div class="col"><a href="<%=todaysAlbum.wikipediaLink%>" target="_blank"><i class="fab fa-wikipedia-w"></i></a></div>
+    <div class="col"><a href="<%=todaysAlbum.discogsLink%>" target="_blank"> <i class="fas fa-record-vinyl"></i></a></div>
+    <div class="col"></div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center mobileButtons">
+      <a class="btn btn-dark" href="/random">Random</a>
+    </div>
+  </div>
+</div>
+
+<%- include("./partials/footer") %>
+

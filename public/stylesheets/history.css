@@ -1,0 +1,8 @@
+#historyTable {
+    margin: 0 auto;
+}
+
+.tableDiv {
+    max-height: 444px;
+    overflow-y: scroll;
+}

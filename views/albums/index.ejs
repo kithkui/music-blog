@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/history.css">
+  <title>History</title>
+</head>
+<body>
+  <div class="tableDiv">
+    <table id="historyTable">
+      <tr>
+          <th id="dateHeader">Date</th>
+          <th id="artistHeader" onclick="sortTable(1)">Artist(s)</th>
+          <th id="albumHeader" onclick="sortTable(2)">Album Name</th>
+          <th id="yearHeader" onclick="sortTable(3)">Year of Release</th>
+          <th>Links</th>
+      </tr>
+      <% foundAlbums.reverse().forEach(function(album) { %>
+            <tr class="tableRow">
+                <td><a href="/albums/<%=album.date%>"><%=album.date%></a></td>
+                <td><%=album.artist.substring(0, 55)  %></td>
+                <td><%=album.name.substring(0, 55)  %></td>
+                <td><%=album.year  %></td>
+                <td class="tableElement">
+                    <a href="<%=album.spotifyLink%>" target="_blank"> <i class="fab fa-spotify"></i></a>
+                    <a href="<%=album.youtubeLink%>" target="_blank"> <i class="fab fa-youtube"></i></a>
+                    <a href="<%=album.wikipediaLink%>" target="_blank"><i class="fab fa-wikipedia-w"></i></a>
+                    <a href="<%=album.discogsLink%>" target="_blank"> <i class="fas fa-record-vinyl"></i></a>
+                </td>
+            </tr>
+      <% }); %>
+    </table>
+  </div>
+ 
+  <script src="scripts/script.js"></script>
+</body>
+</html>
+        
+        

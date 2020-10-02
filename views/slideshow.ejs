@@ -1,0 +1,37 @@
+<%- include("./partials/header") %>
+
+<div class="container text-center albums">
+    <div class="row tableDiv">
+      <div class="col-12">
+        <table class="table table-hover table-dark">
+          <tr>
+              <th>Date</th>
+              <th>Artist(s)</th>
+              <th>Album Name</th>
+              <th>Year of Release</th>
+              <th>Links</th>
+          </tr>
+          <% foundAlbums.reverse().forEach(function(album) { %>
+              <tr class="tableRow">
+                  <td><%=album.date%></td>
+                  <td><%=album.artist %></td>
+                  <td><%=album.name %></td>
+                  <td><%=album.year %></td>
+                  <td class="tableElement">
+                      <a href="<%=album.spotifyLink%>" target="_blank"> <i class="fab fa-spotify"></i></a>
+                      <a href="<%=album.youtubeLink%>" target="_blank"> <i class="fab fa-youtube"></i></a>
+                      <a href="<%=album.wikipediaLink%>" target="_blank"><i class="fab fa-wikipedia-w"></i></a>
+                      <a href="<%=album.discogsLink%>" target="_blank"> <i class="fas fa-record-vinyl"></i></a>
+                  </td>
+              </tr>
+          <% }); %>
+        </table>
+      </div>
+    </div>
+
+
+    <a class="btn btn-dark" href="/">Back</a>
+</div>
+
+
+<%- include("./partials/footer") %>

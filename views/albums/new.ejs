@@ -1,0 +1,55 @@
+<%- include("../partials/header") %>
+
+    <h1>This is for creating a new album on the database</h1>
+
+<form action="/albums" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="date [242020VIII]" name="date">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="name" name="name">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="artist" name="artist">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="number" placeholder="year [1983]" name="year">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="image [url]" name="image">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Spotify Link" name="spotifyLink">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Youtube Link" name="youtubeLink">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Discogs Link" name="discogsLink">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Wikipedia Link" name="wikipediaLink">
+    </div>
+
+    <div class="form-group">
+        <textarea class="form-control" rows="5" cols="33" name="description" placeholder="Why?"></textarea>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="password" name="password">
+    </div>
+
+    <div class="form-group">
+        <button>Submit!</button>
+        <a href="/albums"> Go Back</a>
+    </div>  
+</form>
+<%- include("../partials/footer") %>

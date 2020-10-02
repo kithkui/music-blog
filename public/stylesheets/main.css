@@ -1,0 +1,171 @@
+body { 
+    background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #464646
+}
+
+.landingAlbumImage img {
+    width: 251px;
+    height: auto;
+    border: 2px solid black;
+}
+
+.landingAlbumImage {
+    margin-top: 55px;
+}
+
+.subscriptionNav .btn {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.subscriptionNav h6 {
+    color:white
+}
+
+.aboutDiv {
+    margin-top: 155px;
+}
+
+.aboutContent h1 {
+    color: rgb(235, 230, 168)
+}
+
+.aboutContent p {
+    color:black;
+    font-weight: 700;
+}
+
+.albumInformation {
+    color:black;
+    text-shadow: white 1px 1px ;
+}
+
+.albumInformation h5 {
+    margin-top: 1px;
+}
+
+.linkIcons{
+    text-align: center;
+}
+
+.linkIcons a {
+    font-size: 2rem;
+    color:black
+}
+
+.linkIcons a :hover {
+    font-size: 2rem;
+    color:rgb(160, 192, 207)
+}
+
+.tableHeader {
+    color: rgb(235, 230, 168)
+}
+
+.tableRow:hover {
+    color: rgb(140, 221, 177)
+}
+
+.tableDiv {
+    padding-top: 38px;
+    margin-bottom: 15px;
+    overflow-y: auto
+}
+
+.tableElement i {
+    font-size: 1.618rem;
+    color: black
+}
+
+.tableElement i:hover {
+    color:rgb(160, 192, 207)
+}
+
+.table-responsive {
+    max-height: 370px;
+}
+
+#header-fixed {
+    position: fixed;
+    top: 0px; 
+    display:none;
+}
+
+.navbar {
+    color: transparent;
+    margin: 0 auto;
+}
+
+.buttons{
+    margin: 0 auto;
+}
+
+.subscriptionFormElement{
+    margin: 0 6px;
+}
+
+
+.albumImageDisplay {
+    width: 156px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.captionText h4 {
+    color: black;
+    font-size: 1rem;
+}
+
+.albums {
+    margin-bottom: 111px;
+}
+
+.albums h1{
+    color: rgb(235, 230, 168)
+}
+
+.mobileButtons {
+    visibility: hidden;
+}
+
+
+@media screen and (max-width: 600px) {
+    .subscriptionNav {
+        visibility: hidden;
+    }
+    .historyButton {
+        visibility: hidden;
+    }
+    .mobileButtons {
+        visibility: visible;
+    }
+    .albumInformation {
+        color:black;
+    }
+    .linkIcons {
+        text-align: center;
+    }
+    .linkIcons a {
+        font-size: 2rem;
+        color:white;
+    }
+    .landingAlbumImage{
+        margin-top:23px;
+    }
+  }
+
+.carouselDiv img {
+        width: 251px;
+        height: auto;
+        margin-top: 22px;
+        border: 2px solid black;
+}
+
+.jpImage {
+    width: 251px;
+    height: auto; 
+}
