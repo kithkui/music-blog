@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express       = require("express"),
     app           = express(),
     bodyParser    = require("body-parser"),
@@ -7,7 +9,7 @@ var express       = require("express"),
     functions     = require("./middleware/scripts");
 
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE_MONGODB, { useNewUrlParser: true, useFindAndModify: false });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs"); 
