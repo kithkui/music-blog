@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+
+<div id="container" class="container albumInformation">
+
+    <form action="/days" method="POST">
+        <div class="form-group">
+            <label for="daySKU">Day SKU [date]:</label>
+            <input class="form-control" id="daySKU" type="text" name="daySKU">
+        </div>
+
+        <div class="form-group">
+            <label for="book">Book:</label>
+            <input class="form-control" id="book" type="text" name="book">
+        </div>
+
+        <div class="form-group">
+            <label for="englishID">English Youtube ID:</label>
+            <input class="form-control" id="englishID" type="text" name="englishID">
+        </div>
+
+        <div class="form-group">
+            <label for="spanishID">Spanish Youtube ID:</label>
+            <input class="form-control" id="spanishID" type="text" name="spanishID">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description: </label>
+            <textarea class="form-control" rows="10" cols="33" id="description" name="description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripcion: </label>
+            <textarea class="form-control" rows="10" cols="33" id="descripcion" name="descripcion"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit!</button>
+            <a class="btn btn-primary" href="/"> Go Back</a>
+        </div>  
+    </form>   
+
+</div>
+
+<%- include("../partials/footer") %>

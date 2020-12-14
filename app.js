@@ -3,9 +3,10 @@ require('dotenv').config()
 var express       = require("express"),
     app           = express(),
     bodyParser    = require("body-parser"),
-    mongoose      = require("mongoose");
-    Album         = require("./models/album");
-    Supporter     = require("./models/supporter");
+    mongoose      = require("mongoose"),
+    Album         = require("./models/album"),
+    Day           = require("./models/day"),
+    Supporter     = require("./models/supporter"),
     functions     = require("./middleware/scripts");
 
 mongoose.set('useUnifiedTopology', true);
@@ -111,6 +112,43 @@ app.get("email", function(req,res){
     Album.find({}, function(err, foundAlbums){
         let todaysAlbum = foundAlbums[foundAlbums.length-1]
         res.render("email", {todaysAlbum:todaysAlbum});
+    });
+});
+
+app.get("/days", function(req,res){
+    Day.find({})
+    .then((foundDays)=>{
+      res.render("days/index" , {days:foundDays})
+    })
+});
+  
+app.get("/days/new", function(req, res){
+res.render("days/new");
+})
+
+app.get("/days/:daySKU", function(req, res){
+    Day.findOne({daySKU : req.params.daySKU})
+    .then((thisDay)=>{
+        res.render("days/show", {thisDay:thisDay})
+    })
+})
+
+app.post("/days", function(req,res){
+    Day.find({})
+    .then((foundDays)=>{
+        let newDay = new Day({
+        index : foundDays.length,
+        daySKU : req.body.daySKU,
+        book : req.body.book,
+        englishID : req.body.englishID,
+        spanishID : req.body.spanishID,
+        descripcion : req.body.descripcion,
+        description : req.body.description
+        });
+        newDay.save(()=>{
+        console.log("the new day was saved to the database")
+        res.redirect("days");
+        });
     });
 });
 
