@@ -115,25 +115,25 @@ app.get("email", function(req,res){
     });
 });
 
-app.get("/days", function(req,res){
+app.get("/blog", function(req,res){
     Day.find({})
     .then((foundDays)=>{
-      res.render("days/index" , {days:foundDays})
+      res.render("blog/index" , {days:foundDays})
     })
 });
   
-app.get("/days/new", function(req, res){
-res.render("days/new");
+app.get("/blog/new", function(req, res){
+res.render("blog/new");
 })
 
-app.get("/days/:daySKU", function(req, res){
+app.get("/blog/:daySKU", function(req, res){
     Day.findOne({daySKU : req.params.daySKU})
     .then((thisDay)=>{
-        res.render("days/show", {thisDay:thisDay})
+        res.render("blog/show", {thisDay:thisDay})
     })
 })
 
-app.post("/days", function(req,res){
+app.post("/blog", function(req,res){
     Day.find({})
     .then((foundDays)=>{
         let newDay = new Day({

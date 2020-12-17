@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="icon" href="/stylesheets/favicon.ico">
+  <link rel="stylesheet" href="/stylesheets/blog.css">
+  <title>JPs Blog</title>
+  <script src="/scripts/scripts.js"></script>
+</head>
+<body>
+
+<div id="container" class="container text-center">
+        <h1>Welcome / Bienvenid@</h1>
+    <div class="row months">
+      <div class="col" id="dic2020"><p>2020 XII</p></div>
+      <div class="col" id="ene2021">2021 I</div>
+      <div class="col" id="feb2021">2021 II</div>
+      <div class="col" id="mar2021">2021 III</div>
+      <div class="col" id="abr2021">2021 IV</div>
+      <div class="col" id="may2021">2021 V</div>
+      <div class="col" id="jun2021">2021 VI</div>
+      <div class="col" id="jul2021">2021 VII</div>
+      <div class="col" id="ago2021">2021 VIII</div>
+      <div class="col" id="sep2021">2021 IX</div>
+      <div class="col" id="oct2021">2021 X</div>
+      <div class="col" id="nov2020">2021 XI</div>
+      <div class="col" id="dic2021">2021 XII</div>
+    </div>
+    <div class="container">
+        <table class="table content">
+            <thead>
+              <tr>
+                <th scope="col">Day Index</th>
+                <th scope="col">Date</th>
+                <th scope="col">Book</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <% days.reverse().forEach(function(element){ %>
+                <tr>
+                  <td><%= element.index %></td>
+                  <td><a href="/blog/<%=element.daySKU%>"><%= element.daySKU %></a></td>
+                  <td><%= element.book %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
