@@ -126,10 +126,14 @@ app.get("/blog/new", function(req, res){
 res.render("blog/new");
 })
 
-app.get("/blog/:daySKU", function(req, res){
-    Day.findOne({daySKU : req.params.daySKU})
+app.get("/blog/:index", function(req, res){
+    Day.findOne({index : req.params.index})
     .then((thisDay)=>{
-        res.render("blog/show", {thisDay:thisDay})
+        if(thisDay){
+            res.render("blog/show", {thisDay:thisDay})
+        } else {
+            res.redirect("/blog")
+        }
     })
 })
 
@@ -147,7 +151,7 @@ app.post("/blog", function(req,res){
         });
         newDay.save(()=>{
         console.log("the new day was saved to the database")
-        res.redirect("days");
+        res.redirect("blog");
         });
     });
 });
