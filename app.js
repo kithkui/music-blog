@@ -5,6 +5,8 @@ var express       = require("express"),
     bodyParser    = require("body-parser"),
     mongoose      = require("mongoose"),
     Album         = require("./models/album"),
+    Book          = require("./models/book"),
+    Mentor        = require("./models/mentor"),
     Day           = require("./models/day"),
     Supporter     = require("./models/supporter"),
     functions     = require("./middleware/scripts");
@@ -155,6 +157,67 @@ app.post("/blog", function(req,res){
         });
     });
 });
+
+app.get("/books", function(req,res){
+    Book.find({})
+    .then((allBooks)=>{
+        sortedBooks = allBooks.sort(function(a,b){return b.recommendations.length - a.recommendations.length})
+        res.render("books/index", {books : sortedBooks});
+    })
+})
+
+app.post("/books", function(req,res){
+    console.log(req.body);
+    let newBook = new Book({
+        name : req.body.bookName,
+        author : req.body.bookAuthor,
+        year : req.body.bookYear,
+        subject : req.body.bookSubject,
+        goodreadsUrl : req.body.grurl,
+        grRating : req.body.grRating
+    });
+    console.log(newBook);
+    newBook.save(()=>{
+        console.log("The book " + newBook.name + " was saved in the database");
+        res.redirect("/books/" + newBook.name);
+    })
+})
+
+app.get("/books/new", function(req,res){
+    res.render("books/new");
+})
+
+app.get("/books/:bookName", function(req,res){
+    Book.findOne({name : req.params.bookName}).populate("recommendations")
+    .then((thisBook)=>{
+        res.render("books/show", {book: thisBook})
+    })
+})
+
+app.post("/books/:bookName", function(req,res){
+    Book.findOne({name: req.params.bookName})
+    .then((thisBook)=>{
+        let mentor = new Mentor({
+            name : req.body.mentorName, 
+            platform : req.body.platform,
+            link : req.body.link,
+            comments : req.body.comments
+        });
+        mentor.save();
+        thisBook.recommendations.push(mentor);
+        thisBook.save(()=>{
+            console.log("The book was saved with the recommendation from " + mentor.name);
+            res.redirect("/books/" + thisBook.name);
+        })
+    })
+})
+
+app.get("/books/:bookName/newMentor", function (req, res){
+    Book.findOne({name: req.params.bookName})
+    .then((thisBook)=>{
+        res.render("mentors/new", {book : thisBook})
+    })
+})
 
 app.get("/:anything", function(req,res){
     res.render("mistake");

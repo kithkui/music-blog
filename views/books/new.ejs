@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+    <link rel="stylesheet" href="/stylesheets/books.css">
+</head>
+<body>
+    <h4>Add a new book</h4>
+    <form action="/books" method="POST">
+        <div class="form-group">
+            <label for="bookName">Book Name:</label>
+            <input class="form-control" id="bookName" type="text" name="bookName">
+        </div>
+
+        <div class="form-group">
+            <label for="bookAuthor">Author:</label>
+            <input class="form-control" id="bookAuthor" type="text" name="bookAuthor">
+        </div>
+
+        <div class="form-group">
+            <label for="bookYear">First Publishing Year:</label>
+            <input class="form-control" id="bookYear" type="text" name="bookYear">
+        </div>
+
+        <div class="form-group">
+            <label for="bookSubject">Subject:</label>
+            <input class="form-control" id="bookSubject" type="text" name="bookSubject">
+        </div>
+
+        <div class="form-group">
+            <label for="grurl">GoodReads URL:</label>
+            <input class="form-control" id="grurl" type="text" name="grurl">
+        </div>
+
+        <div class="form-group">
+            <label for="grRating">GoodReads Rating:</label>
+            <input class="form-control" id="grRating" type="text" name="grRating">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit!</button>
+            <a href="/books"> Go Back</a>
+        </div>  
+    </form>   
+</body>
+</html>

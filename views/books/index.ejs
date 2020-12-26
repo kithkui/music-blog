@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="/stylesheets/books.css">
+</head>
+<body>
+<h4>Here are all the books that someone that I heard recommended</h4>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Book Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Year</th>
+                <th scope="col">Total Recommendations</th>
+                <th scope="col">GR Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% books.forEach((book)=>{ %>
+                <tr>
+                    <td><a href="/books/<%=book.name%>"><%= book.name %></a></td>
+                    <td><%= book.author %></td>
+                    <td><%= book.year %></td>
+                    <td><%= book.recommendations.length %></td>
+                    <td><a target="_blank" href="<%=book.goodreadsUrl%>"><%=book.grRating%></a></td>
+                </tr>
+            <% });%>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/books/new">Nuevo Libro</a>
+</body>
+</html>

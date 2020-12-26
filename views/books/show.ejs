@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=book.name%></title>
+    <link rel="stylesheet" href="/stylesheets/books.css">
+</head>
+<body>
+    <p>This is the space for the book <strong><%=book.name%></strong> by <em><%=book.author%></em>, which was written in <%=book.year%></p>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Platform</th>
+                <th scope="col">Link</th>
+                <th scope="col">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% book.recommendations.forEach((recommendation)=>{ %>
+                <tr>
+                    <td><%= recommendation.name %></td>
+                    <td><%= recommendation.platform %></td>
+                    <td><%= recommendation.link %></td>
+                    <td><%= recommendation.comments %></td>
+                </tr>
+            <% });%>
+        </tbody>
+    </table>
+    <a href="/books/<%=book.name%>/newMentor">Add Mentor</a>
+    <a href="/books">Back</a>
+</body>
+</html>
